@@ -1,0 +1,32 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Dashboard from "./pages/Dashboard";
+import Doctors from "./pages/Doctors";
+import Appointment from "./pages/Appointment";
+import DoctorDashboard from "./pages/DoctorDashboard";
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/doctors" element={<Doctors />} />
+        <Route path="/appointment/:id" element={<Appointment />} />
+        <Route path="/doctor-dashboard" element={<DoctorDashboard />} />
+      </Routes>
+
+      <Footer />
+    </BrowserRouter>
+  );
+}
